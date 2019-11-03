@@ -50,11 +50,16 @@ int main () {
     string s, ant;
     while (infile >> s) {
         if (s[0] == '.') {
-            cout << ant + "'s" << endl;
+            ant += "'s";
+            cout << ant << endl;
         }
+        // cout << "before processing: " << s << endl;
         s = remove_dot(s);
         s = decode_word(s, ant);
         cout << s << endl;
         ant = s;
+        // if (s == "canal")
+        //     break;
+
     }
 }
